@@ -26,7 +26,7 @@ const UserSelectAndClaim = ({ onClaimSuccess }) => {
   const addUser = async () => {
     if (!newUserName.trim()) return alert("Enter a username");
     try {
-      const res = await axios.post("/users", { username: newUserName.trim() });
+      const res = await axios.post("/api/users", { username: newUserName.trim() });
       if (res.data.success) {
         setNewUserName("");
         fetchUsers();
@@ -43,7 +43,7 @@ const UserSelectAndClaim = ({ onClaimSuccess }) => {
   const claimPointsHandler = async () => {
     if (!selectedUserId) return alert("Select a user first");
     try {
-      const res = await axios.post(`/users/${selectedUserId}/claim`);
+      const res = await axios.post(`/api/users/${selectedUserId}/claim`);
       if (res.data.success) {
         setClaimPoints(res.data.points);
         onClaimSuccess(); // refresh leaderboard

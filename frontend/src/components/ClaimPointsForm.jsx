@@ -13,7 +13,7 @@ export default function ClaimPointsForm({ onClaim }) {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("/users");
+      const res = await axios.get("/api/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Failed to fetch users:", err);
@@ -28,7 +28,7 @@ export default function ClaimPointsForm({ onClaim }) {
     }
 
     try {
-      const res = await axios.post("/claim", { userId: selectedId });
+      const res = await axios.post("/api/claim", { userId: selectedId });
       toast.success(`Awarded ${res.data.pointsClaimed || res.data.points} points!`);
       onClaim(); // reload leaderboard
     } catch (err) {

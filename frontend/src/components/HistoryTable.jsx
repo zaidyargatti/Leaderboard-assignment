@@ -11,7 +11,7 @@ export default function HistoryTable() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("/history"); // Make sure this route populates userId
+      const res = await axios.get("/api/history"); // Make sure this route populates userId
       setHistory(res.data.reverse()); // Latest first
     } catch (err) {
       console.error("Failed to fetch claim history:", err);

@@ -13,7 +13,7 @@ export default function LeaderboardPage() {
 
   const fetchLeaderboard = async () => {
     try {
-      const res = await axios.get("/users");
+      const res = await axios.get("/api/users");
       const sorted = res.data.sort((a, b) => b.points - a.points);
       setUsers(sorted);
     } catch (err) {

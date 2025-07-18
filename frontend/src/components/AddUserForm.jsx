@@ -13,7 +13,7 @@ export default function AddUserForm({ onUserAdded }) {
     }
 
     try {
-      await axios.post("/users", { name });
+      await axios.post("/api/users", { name });
       toast.success("User added successfully!");
       onUserAdded(); // reload leaderboard
       setName("");
