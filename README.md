@@ -63,3 +63,8 @@ Users can be added and awarded points. A leaderboard shows users sorted by score
 │   └── App.jsx
 ```
 Note: Use your own mongodb url and redis port in project env.
+
+PORT=3000
+DB_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/leader-board
+REDIS_URL=redis://<your-render-redis-url>:6379
+
